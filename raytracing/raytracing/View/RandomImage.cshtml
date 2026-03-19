@@ -1,0 +1,13 @@
+﻿<h2>Random Pixel Canvas</h2>
+
+<img src="/random-image" />
+
+<br />
+<button onclick="reload()">Neu generieren</button>
+
+<script>
+    function reload() {
+        document.querySelector("img").src = "/random-image?t=" + Date.now();
+    }
+</script>
+
