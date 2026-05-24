@@ -26,18 +26,34 @@
 
         public static bool IsInShadow(Vec3 point, Vec3 lightPos, List<ISceneObject> objects)
         {
-            Vec3 toLight = lightPos - point;
+            Vec3  toLight       = lightPos - point;
             float lightDistance = toLight.Length();
-            Vec3 lightDir = toLight.Normalized();
+            Vec3  lightDir      = toLight.Normalized();
 
-            // Small offset so the ray does not immediately hit the same surface again
             const float epsilon = 0.0001f;
-            Ray shadowRay = new Ray(point + lightDir * epsilon, lightDir);
+            Vec3 origin = point + lightDir * epsilon;
+            float traveled = epsilon;
 
-            if (!TraceClosest(shadowRay, objects, out Hit shadowHit))
-                return false;
+            // Walk through transparent surfaces; stop at the first opaque blocker
+            for (int bounce = 0; bounce < 8; bounce++)
+            {
+                Ray shadowRay = new Ray(origin, lightDir);
+                if (!TraceClosest(shadowRay, objects, out Hit h))
+                    return false;
 
-            return shadowHit.T < lightDistance;
+                float hitDist = traveled + h.T;
+                if (hitDist >= lightDistance)
+                    return false;
+
+                if (h.Transparency < 0.5f)
+                    return true;
+
+                // Transparent hit — step past it and keep going
+                origin   = h.Position + lightDir * epsilon;
+                traveled = hitDist + epsilon;
+            }
+
+            return false;
         }
     }
 }

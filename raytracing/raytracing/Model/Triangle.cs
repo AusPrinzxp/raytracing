@@ -7,12 +7,33 @@
         public Vec3 C { get; }
         public Vec3 Color { get; }
 
-        public Triangle(Vec3 a, Vec3 b, Vec3 c, Vec3 color)
+        public float Ambient { get; }
+        public float Diffuse { get; }
+        public float Specular { get; }
+        public float Shininess { get; }
+        public float Reflectivity { get; }
+        public float Transparency { get; }
+        public float IOR { get; }
+
+        public Triangle(Vec3 a, Vec3 b, Vec3 c, Vec3 color, float ambient = 0.1f,
+        float diffuse = 1.0f,
+        float specular = 0.5f,
+        float shininess = 32f,
+        float reflectivity = 0f,
+        float transparency = 0f,
+        float ior = 1f)
         {
             A = a;
             B = b;
             C = c;
             Color = color;
+            Ambient = ambient;
+            Diffuse = diffuse;
+            Specular = specular;
+            Shininess = shininess;
+            Reflectivity = reflectivity;
+            Transparency = transparency;
+            IOR = ior;
         }
 
         public bool TryIntersect(Ray ray, out Hit hit)
@@ -43,7 +64,14 @@
                 T = t,
                 Position = p,
                 Normal = normal,
-                Color = Color
+                Color = Color,
+                Ambient = Ambient,
+                Diffuse = Diffuse,
+                Specular = Specular,
+                Shininess = Shininess,
+                Reflectivity = Reflectivity,
+                Transparency = Transparency,
+                IOR = IOR
             };
 
             return true;

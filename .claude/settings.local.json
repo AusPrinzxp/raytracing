@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dotnet build *)",
+      "Bash(grep \"^usemtl\" \"C:/HSLU/Semester 6/RAYTRACING/assets/source/r34.obj\" | head -40)",
+      "Read(//c/HSLU/Semester 6/RAYTRACING/assets/source/**)",
+      "Bash(python3 -)",
+      "Read(//c/HSLU/Semester 6/RAYTRACING/assets2/source/R34 NISMO/**)",
+      "Bash(ls \"C:/Program Files/Blender Foundation/\" 2>/dev/null || echo \"not found\")",
+      "Read(//c/Program Files/Blender Foundation/**)",
+      "Bash(grep \"^usemtl\" \"C:/HSLU/Semester 6/RAYTRACING/assets2/source/r34nismo.obj\" | sort -u)",
+      "Read(//c/HSLU/Semester 6/RAYTRACING/assets2/source/**)",
+      "Bash('C:/Program Files/Blender Foundation/Blender 5.1/blender.exe' --background --python-expr ' *)",
+      "PowerShell(cd \"c:\\\\HSLU\\\\Semester 6\\\\RAYTRACING\\\\raytracing\\\\raytracing\" ; dotnet build --no-restore -v quiet 2>&1 | Select-String \"error|Error\" | Where-Object { $_ -notmatch \"warning|Warning\" })",
+      "PowerShell(cd \"c:\\\\HSLU\\\\Semester 6\\\\RAYTRACING\\\\raytracing\\\\raytracing\"; dotnet build --no-restore -v quiet 2>&1 | Select-String \"error\" | Where-Object { $_ -notmatch \"[Ww]arning\" })"
+    ]
+  }
+}

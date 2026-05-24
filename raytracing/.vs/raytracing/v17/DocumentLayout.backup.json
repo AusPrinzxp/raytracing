@@ -3,36 +3,44 @@
   "WorkspaceRootPath": "C:\\HSLU\\Semester 6\\RAYTRACING\\raytracing\\raytracing\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|c:\\hslu\\semester 6\\raytracing\\raytracing\\raytracing\\raytracing\\controllers\\reflectionrefractioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|solutionrelative:raytracing\\controllers\\reflectionrefractioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|c:\\hslu\\semester 6\\raytracing\\raytracing\\raytracing\\raytracing\\model\\hit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|solutionrelative:raytracing\\model\\hit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|c:\\hslu\\semester 6\\raytracing\\raytracing\\raytracing\\raytracing\\controllers\\cubespherecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|solutionrelative:raytracing\\controllers\\cubespherecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|c:\\hslu\\semester 6\\raytracing\\raytracing\\raytracing\\raytracing\\model\\raytracer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|solutionrelative:raytracing\\model\\raytracer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|c:\\hslu\\semester 6\\raytracing\\raytracing\\raytracing\\raytracing\\model\\triangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|solutionrelative:raytracing\\model\\triangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|c:\\hslu\\semester 6\\raytracing\\raytracing\\raytracing\\raytracing\\controllers\\spherefacecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|solutionrelative:raytracing\\controllers\\spherefacecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|c:\\hslu\\semester 6\\raytracing\\raytracing\\raytracing\\raytracing\\model\\sphere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|solutionrelative:raytracing\\model\\sphere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|c:\\hslu\\semester 6\\raytracing\\raytracing\\raytracing\\raytracing\\model\\plane.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|solutionrelative:raytracing\\model\\plane.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|c:\\hslu\\semester 6\\raytracing\\raytracing\\raytracing\\raytracing\\model\\isceneobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|solutionrelative:raytracing\\model\\isceneobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|c:\\hslu\\semester 6\\raytracing\\raytracing\\raytracing\\raytracing\\model\\triangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|solutionrelative:raytracing\\model\\triangle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|c:\\hslu\\semester 6\\raytracing\\raytracing\\raytracing\\raytracing\\model\\hit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|solutionrelative:raytracing\\model\\hit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|c:\\hslu\\semester 6\\raytracing\\raytracing\\raytracing\\raytracing\\model\\sphere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|solutionrelative:raytracing\\model\\sphere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|c:\\hslu\\semester 6\\raytracing\\raytracing\\raytracing\\raytracing\\model\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|solutionrelative:raytracing\\model\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|c:\\hslu\\semester 6\\raytracing\\raytracing\\raytracing\\raytracing\\model\\raytracer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|solutionrelative:raytracing\\model\\raytracer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|c:\\hslu\\semester 6\\raytracing\\raytracing\\raytracing\\raytracing\\controllers\\spherefacecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|solutionrelative:raytracing\\controllers\\spherefacecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|c:\\hslu\\semester 6\\raytracing\\raytracing\\raytracing\\raytracing\\model\\isceneobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|solutionrelative:raytracing\\model\\isceneobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CCC8B01C-60DA-4BC8-87E6-322882189264}|raytracing\\raytracing.csproj|c:\\hslu\\semester 6\\raytracing\\raytracing\\raytracing\\raytracing\\model\\lightsource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -95,31 +103,56 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ReflectionRefractionController.cs",
+              "DocumentMoniker": "C:\\HSLU\\Semester 6\\RAYTRACING\\raytracing\\raytracing\\raytracing\\Controllers\\ReflectionRefractionController.cs",
+              "RelativeDocumentMoniker": "raytracing\\Controllers\\ReflectionRefractionController.cs",
+              "ToolTip": "C:\\HSLU\\Semester 6\\RAYTRACING\\raytracing\\raytracing\\raytracing\\Controllers\\ReflectionRefractionController.cs",
+              "RelativeToolTip": "raytracing\\Controllers\\ReflectionRefractionController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAJQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-02T12:48:44.916Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Camera.cs",
+              "DocumentMoniker": "C:\\HSLU\\Semester 6\\RAYTRACING\\raytracing\\raytracing\\raytracing\\Model\\Camera.cs",
+              "RelativeDocumentMoniker": "raytracing\\Model\\Camera.cs",
+              "ToolTip": "C:\\HSLU\\Semester 6\\RAYTRACING\\raytracing\\raytracing\\raytracing\\Model\\Camera.cs",
+              "RelativeToolTip": "raytracing\\Model\\Camera.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T13:27:01.768Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "CubeSphereController.cs",
               "DocumentMoniker": "C:\\HSLU\\Semester 6\\RAYTRACING\\raytracing\\raytracing\\raytracing\\Controllers\\CubeSphereController.cs",
               "RelativeDocumentMoniker": "raytracing\\Controllers\\CubeSphereController.cs",
               "ToolTip": "C:\\HSLU\\Semester 6\\RAYTRACING\\raytracing\\raytracing\\raytracing\\Controllers\\CubeSphereController.cs",
               "RelativeToolTip": "raytracing\\Controllers\\CubeSphereController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAxwCIAAABBAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADgAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-12T13:38:00.01Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Triangle.cs",
               "DocumentMoniker": "C:\\HSLU\\Semester 6\\RAYTRACING\\raytracing\\raytracing\\raytracing\\Model\\Triangle.cs",
               "RelativeDocumentMoniker": "raytracing\\Model\\Triangle.cs",
               "ToolTip": "C:\\HSLU\\Semester 6\\RAYTRACING\\raytracing\\raytracing\\raytracing\\Model\\Triangle.cs",
               "RelativeToolTip": "raytracing\\Model\\Triangle.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEcAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAYwD0AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-12T13:34:00.319Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "RayTracer.cs",
               "DocumentMoniker": "C:\\HSLU\\Semester 6\\RAYTRACING\\raytracing\\raytracing\\raytracing\\Model\\RayTracer.cs",
               "RelativeDocumentMoniker": "raytracing\\Model\\RayTracer.cs",
@@ -131,31 +164,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "Plane.cs",
               "DocumentMoniker": "C:\\HSLU\\Semester 6\\RAYTRACING\\raytracing\\raytracing\\raytracing\\Model\\Plane.cs",
               "RelativeDocumentMoniker": "raytracing\\Model\\Plane.cs",
               "ToolTip": "C:\\HSLU\\Semester 6\\RAYTRACING\\raytracing\\raytracing\\raytracing\\Model\\Plane.cs",
               "RelativeToolTip": "raytracing\\Model\\Plane.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAxwCoAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAwDUAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-12T13:23:00.264Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "Hit.cs",
               "DocumentMoniker": "C:\\HSLU\\Semester 6\\RAYTRACING\\raytracing\\raytracing\\raytracing\\Model\\Hit.cs",
               "RelativeDocumentMoniker": "raytracing\\Model\\Hit.cs",
               "ToolTip": "C:\\HSLU\\Semester 6\\RAYTRACING\\raytracing\\raytracing\\raytracing\\Model\\Hit.cs",
               "RelativeToolTip": "raytracing\\Model\\Hit.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T13:21:44.231Z"
+              "WhenOpened": "2026-03-12T13:21:44.231Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "ISceneObject.cs",
               "DocumentMoniker": "C:\\HSLU\\Semester 6\\RAYTRACING\\raytracing\\raytracing\\raytracing\\Model\\ISceneObject.cs",
               "RelativeDocumentMoniker": "raytracing\\Model\\ISceneObject.cs",
@@ -167,19 +201,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Sphere.cs",
               "DocumentMoniker": "C:\\HSLU\\Semester 6\\RAYTRACING\\raytracing\\raytracing\\raytracing\\Model\\Sphere.cs",
               "RelativeDocumentMoniker": "raytracing\\Model\\Sphere.cs",
               "ToolTip": "C:\\HSLU\\Semester 6\\RAYTRACING\\raytracing\\raytracing\\raytracing\\Model\\Sphere.cs",
               "RelativeToolTip": "raytracing\\Model\\Sphere.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAzwEUAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-05T12:55:00.691Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "LightSource.cs",
               "DocumentMoniker": "C:\\HSLU\\Semester 6\\RAYTRACING\\raytracing\\raytracing\\raytracing\\Model\\LightSource.cs",
               "RelativeDocumentMoniker": "raytracing\\Model\\LightSource.cs",
@@ -191,7 +225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "SphereFaceController.cs",
               "DocumentMoniker": "C:\\HSLU\\Semester 6\\RAYTRACING\\raytracing\\raytracing\\raytracing\\Controllers\\SphereFaceController.cs",
               "RelativeDocumentMoniker": "raytracing\\Controllers\\SphereFaceController.cs",
@@ -203,7 +237,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "Ray.cs",
               "DocumentMoniker": "C:\\HSLU\\Semester 6\\RAYTRACING\\raytracing\\raytracing\\raytracing\\Model\\Ray.cs",
               "RelativeDocumentMoniker": "raytracing\\Model\\Ray.cs",
@@ -215,7 +249,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "Spheres3DController.cs",
               "DocumentMoniker": "C:\\HSLU\\Semester 6\\RAYTRACING\\raytracing\\raytracing\\raytracing\\Controllers\\Spheres3DController.cs",
               "RelativeDocumentMoniker": "raytracing\\Controllers\\Spheres3DController.cs",
@@ -227,7 +261,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "Vec3i.cs",
               "DocumentMoniker": "C:\\HSLU\\Semester 6\\RAYTRACING\\raytracing\\raytracing\\raytracing\\Model\\Vec3i.cs",
               "RelativeDocumentMoniker": "raytracing\\Model\\Vec3i.cs",
@@ -239,7 +273,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "Vec3.cs",
               "DocumentMoniker": "C:\\HSLU\\Semester 6\\RAYTRACING\\raytracing\\raytracing\\raytracing\\Model\\Vec3.cs",
               "RelativeDocumentMoniker": "raytracing\\Model\\Vec3.cs",
@@ -251,7 +285,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "Vec2.cs",
               "DocumentMoniker": "C:\\HSLU\\Semester 6\\RAYTRACING\\raytracing\\raytracing\\raytracing\\Model\\Vec2.cs",
               "RelativeDocumentMoniker": "raytracing\\Model\\Vec2.cs",
@@ -263,7 +297,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "Vec2i.cs",
               "DocumentMoniker": "C:\\HSLU\\Semester 6\\RAYTRACING\\raytracing\\raytracing\\raytracing\\Model\\Vec2i.cs",
               "RelativeDocumentMoniker": "raytracing\\Model\\Vec2i.cs",
@@ -275,7 +309,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "RgbCirclesController.cs",
               "DocumentMoniker": "C:\\HSLU\\Semester 6\\RAYTRACING\\raytracing\\raytracing\\raytracing\\Controllers\\RgbCirclesController.cs",
               "RelativeDocumentMoniker": "raytracing\\Controllers\\RgbCirclesController.cs",
@@ -287,7 +321,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "CircleController.cs",
               "DocumentMoniker": "C:\\HSLU\\Semester 6\\RAYTRACING\\raytracing\\raytracing\\raytracing\\Controllers\\CircleController.cs",
               "RelativeDocumentMoniker": "raytracing\\Controllers\\CircleController.cs",
@@ -299,7 +333,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\HSLU\\Semester 6\\RAYTRACING\\raytracing\\raytracing\\raytracing\\Program.cs",
               "RelativeDocumentMoniker": "raytracing\\Program.cs",
@@ -311,7 +345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "RandomImage.cshtml",
               "DocumentMoniker": "C:\\HSLU\\Semester 6\\RAYTRACING\\raytracing\\raytracing\\raytracing\\View\\RandomImage.cshtml",
               "RelativeDocumentMoniker": "raytracing\\View\\RandomImage.cshtml",
@@ -323,7 +357,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "RandomImageController.cs",
               "DocumentMoniker": "C:\\HSLU\\Semester 6\\RAYTRACING\\raytracing\\raytracing\\raytracing\\Controllers\\RandomImageController.cs",
               "RelativeDocumentMoniker": "raytracing\\Controllers\\RandomImageController.cs",

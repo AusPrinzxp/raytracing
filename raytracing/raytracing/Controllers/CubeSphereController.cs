@@ -9,101 +9,133 @@ using System.Runtime.InteropServices;
 
 namespace raytracing.Controllers
 {
-        public class CubeSphereController : Controller
+    public class CubeSphereController : Controller
+    {
+        [HttpGet("/cube-sphere")]
+        public IActionResult Render(int width = 1920, int height = 1080)
         {
-            [HttpGet("/cube-sphere")]
-            public IActionResult Render(int width = 1920, int height = 1080)
+            using var bmp = new Bitmap(width, height, PixelFormat.Format32bppArgb);
+
+            float aspect = (float)width / height;
+
+            Camera camera = new Camera(
+                position: new Vec3(0f, 1.2f, -8f),
+                lookAt: new Vec3(0f, 0f, 3.5f),
+                worldUp: new Vec3(0f, 1f, 0f),
+                fovDegrees: 90f,
+                aspectRatio: (float)width / height
+            );
+
+            Vec3 lightPos = new Vec3(2f, 3f, 4f);
+            Vec3 lightColor = new Vec3(1f, 1f, 1f);
+
+            Vec3 backgroundColor = new Vec3(0f, 0f, 0f);
+
+            var objects = new List<ISceneObject>
             {
-                using var bmp = new Bitmap(width, height, PixelFormat.Format32bppArgb);
+                new Sphere(
+                    new Vec3(0.0f, -0.4f, 4.2f),
+                    1.8f,
+                    new Vec3(0.2f, 0.6f, 1.0f),
+                    ambient: 0.1f,
+                    diffuse: 0.9f,
+                    specular: 0.8f,
+                    shininess: 64f)
+            };
 
-                Vec3 camPos = new Vec3(0f, 0f, -4f);
-                float aspect = (float)width / height;
-                float scale = 1f;
+            objects.AddRange(CreateCube(new Vec3(-2.2f, 3f, 0.0f), 1.3f, new Vec3(1.0f, 0.25f, 0.25f)));
 
-                Vec3 lightPos = new Vec3(-2f, 3f, -2f);
-                Vec3 lightColor = new Vec3(1f, 1f, 1f);
+            objects.Add(
+                new Plane(
+                    new Vec3(0f, -2.2f, 0f),
+                    new Vec3(0f, 1f, 0f),
+                    new Vec3(0.7f, 0.7f, 0.7f),
+                    ambient: 0.1f,
+                    diffuse: 0.9f,
+                    specular: 0.1f,
+                    shininess: 8f)
+            );
 
-                Vec3 backgroundColor = new Vec3(0f, 0f, 0f);
+            var rect = new Rectangle(0, 0, width, height);
+            var data = bmp.LockBits(rect, ImageLockMode.WriteOnly, PixelFormat.Format32bppArgb);
 
-                var objects = new List<ISceneObject>
+            try
+            {
+                int stride = data.Stride;
+                byte[] buffer = new byte[stride * height];
+
+                Parallel.For(0, height, y =>
                 {
-                    // Large sphere (main object)
-                    new Sphere(new Vec3(0.0f, -0.4f, 4.2f), 1.8f, new Vec3(0.2f, 0.6f, 1.0f))
-                };
+                    int row = y * stride;
 
-                objects.AddRange(CreateCube(new Vec3(-2.2f, 3f, 0.0f), 1.3f, new Vec3(1.0f, 0.25f, 0.25f)));
-
-                objects.Add(
-                    new Plane(new Vec3(0f, -2.2f, 0f), new Vec3(0f, 1f, 0f), new Vec3(0.7f, 0.7f, 0.7f)
-                ));
-
-                var rect = new Rectangle(0, 0, width, height);
-                var data = bmp.LockBits(rect, ImageLockMode.WriteOnly, PixelFormat.Format32bppArgb);
-
-                try
-                {
-                    int stride = data.Stride;
-                    byte[] buffer = new byte[stride * height];
-
-                    Parallel.For(0, height, y =>
+                    for (int x = 0; x < width; x++)
                     {
-                        int row = y * stride;
+                        Ray ray = camera.GetRay(x, y, width, height);
 
-                        for (int x = 0; x < width; x++)
+                        Vec3 col;
+
+                        if (!RayTracer.TraceClosest(ray, objects, out Hit hit))
                         {
-                            float px = (2f * ((x + 0.5f) / width) - 1f) * aspect * scale;
-                            float py = (1f - 2f * ((y + 0.5f) / height)) * scale;
-
-                            Vec3 dir = new Vec3(px, py, 1f).Normalized();
-                            Ray ray = new Ray(camPos, dir);
-
-                            Vec3 col;
-
-                            if (!RayTracer.TraceClosest(ray, objects, out Hit hit))
-                            {
-                                col = backgroundColor;
-                            }
-                            else
-                            {
-                                Vec3 lightDir = (lightPos - hit.Position).Normalized();
-                                float ndotl = MathF.Max(0f, Vec3.Dot(hit.Normal, lightDir));
-
-                                bool inShadow = RayTracer.IsInShadow(hit.Position, lightPos, objects);
-
-                                if (inShadow)
-                                    col = hit.Color * 0.1f;
-                                else
-                                    col = (hit.Color * lightColor) * ndotl;
-                            }
-
-                            int i = row + x * 4;
-                            buffer[i + 0] = (byte)(Math.Clamp(col.Z, 0f, 1f) * 255);
-                            buffer[i + 1] = (byte)(Math.Clamp(col.Y, 0f, 1f) * 255);
-                            buffer[i + 2] = (byte)(Math.Clamp(col.X, 0f, 1f) * 255);
-                            buffer[i + 3] = 255;
+                            col = backgroundColor;
                         }
-                    });
+                        else
+                        {
+                            Vec3 lightDir = (lightPos - hit.Position).Normalized();
+                            Vec3 viewDir = (camera.Position - hit.Position).Normalized();
 
-                    Marshal.Copy(buffer, 0, data.Scan0, buffer.Length);
-                }
-                finally
-                {
-                    bmp.UnlockBits(data);
-                }
+                            bool inShadow = RayTracer.IsInShadow(hit.Position, lightPos, objects);
 
-                using var ms = new MemoryStream();
-                bmp.Save(ms, ImageFormat.Png);
+                            float ambient = hit.Ambient;
+                            float diffuse = 0f;
+                            float specular = 0f;
 
-                return File(ms.ToArray(), "image/png");
+                            if (!inShadow)
+                            {
+                                diffuse = hit.Diffuse * MathF.Max(0f, Vec3.Dot(hit.Normal, lightDir));
+
+                                Vec3 halfDir = (lightDir + viewDir).Normalized();
+                                specular = hit.Specular * MathF.Pow(
+                                    MathF.Max(0f, Vec3.Dot(hit.Normal, halfDir)),
+                                    hit.Shininess
+                                );
+                            }
+
+                            Vec3 ambientTerm = hit.Color * ambient;
+                            Vec3 diffuseTerm = (hit.Color * lightColor) * diffuse;
+                            Vec3 specularTerm = lightColor * specular;
+
+                            col = ambientTerm + diffuseTerm + specularTerm;
+                            col = Vec3.Clamp(col, 0f, 1f);
+                        }
+
+                        int i = row + x * 4;
+                        buffer[i + 0] = (byte)(Math.Clamp(col.Z, 0f, 1f) * 255);
+                        buffer[i + 1] = (byte)(Math.Clamp(col.Y, 0f, 1f) * 255);
+                        buffer[i + 2] = (byte)(Math.Clamp(col.X, 0f, 1f) * 255);
+                        buffer[i + 3] = 255;
+                    }
+                });
+
+                Marshal.Copy(buffer, 0, data.Scan0, buffer.Length);
+            }
+            finally
+            {
+                bmp.UnlockBits(data);
             }
 
-            // Creates cube from 12 triangles
-            private static List<ISceneObject> CreateCube(Vec3 center, float size, Vec3 color)
-            {
-                float s = size / 2f;
+            using var ms = new MemoryStream();
+            bmp.Save(ms, ImageFormat.Png);
 
-                Vec3[] v =
-                {
+            return File(ms.ToArray(), "image/png");
+        }
+
+        // Creates cube from 12 triangles
+        private static List<ISceneObject> CreateCube(Vec3 center, float size, Vec3 color)
+        {
+            float s = size / 2f;
+
+            Vec3[] v =
+            {
                 center + new Vec3(-s,-s,-s),
                 center + new Vec3( s,-s,-s),
                 center + new Vec3( s, s,-s),
@@ -114,7 +146,7 @@ namespace raytracing.Controllers
                 center + new Vec3(-s, s, s)
             };
 
-                return new List<ISceneObject>
+            return new List<ISceneObject>
             {
                 // front
                 new Triangle(v[4],v[5],v[6],color),
