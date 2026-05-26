@@ -29,16 +29,18 @@ namespace raytracing.Model
         }
 
         public Ray GetRay(int x, int y, int width, int height)
+            => GetRay(x + 0.5f, y + 0.5f, width, height);
+
+        public Ray GetRay(float px, float py, int width, int height)
         {
             float fovRad = FovDegrees * (MathF.PI / 180f);
             float halfHeight = MathF.Tan(fovRad / 2f);
             float halfWidth = AspectRatio * halfHeight;
 
-            float u = (2f * ((x + 0.5f) / width) - 1f) * halfWidth;
-            float v = (1f - 2f * ((y + 0.5f) / height)) * halfHeight;
+            float u = (2f * (px / width)  - 1f) * halfWidth;
+            float v = (1f - 2f * (py / height)) * halfHeight;
 
             Vec3 direction = (Forward + Right * u + Up * v).Normalized();
-
             return new Ray(Position, direction);
         }
     }
