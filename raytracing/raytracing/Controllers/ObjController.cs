@@ -17,9 +17,9 @@ namespace raytracing.Controllers
             @"C:\HSLU\Semester 6\RAYTRACING\assets2\source\r34nismo.obj";
 
         [HttpGet("/obj")]
-        public IActionResult Render(int width = 800, int height = 450)
+        //public IActionResult Render(int width = 800, int height = 450)
         //public IActionResult Render(int width = 2400, int height = 1350)
-        //public IActionResult Render(int width = 1920, int height = 1080)
+        public IActionResult Render(int width = 1920, int height = 1080)
         {
             var groups = ObjLoader.LoadGrouped(ObjPath);
 
@@ -279,40 +279,6 @@ namespace raytracing.Controllers
                 AddBox(new Vec3(tbLo - 0.001f, dsY0, tbZ0 - 0.001f), new Vec3(tbHi + 0.001f, dsY0 + dsH, tbZ1 + 0.001f),
                     boxDark, 0.05f, 0.5f, 0.8f, 96f, 0.1f);
             }
-            // ── Glass jar prop ────────────────────────────────────────────────
-            void AddCylinder(Vec3 baseCtr, float r, float h, int N,
-                Vec3 col, float amb, float dif, float spec, float shin,
-                float refl = 0f, float transp = 0f, float ior = 1f)
-            {
-                void T(Vec3 a, Vec3 b, Vec3 c) =>
-                    triangles.Add(new Triangle(a, b, c, col, amb, dif, spec, shin, refl, transp, ior));
-                float y0 = baseCtr.Y, y1 = baseCtr.Y + h;
-                Vec3 bc = new Vec3(baseCtr.X, y0, baseCtr.Z);
-                for (int i = 0; i < N; i++)
-                {
-                    float a0 = i       * MathF.PI * 2f / N;
-                    float a1 = (i + 1) * MathF.PI * 2f / N;
-                    Vec3 b0 = new Vec3(baseCtr.X + r * MathF.Cos(a0), y0, baseCtr.Z + r * MathF.Sin(a0));
-                    Vec3 b1 = new Vec3(baseCtr.X + r * MathF.Cos(a1), y0, baseCtr.Z + r * MathF.Sin(a1));
-                    Vec3 t0 = new Vec3(baseCtr.X + r * MathF.Cos(a0), y1, baseCtr.Z + r * MathF.Sin(a0));
-                    Vec3 t1 = new Vec3(baseCtr.X + r * MathF.Cos(a1), y1, baseCtr.Z + r * MathF.Sin(a1));
-                    T(b0, b1, t1); T(b0, t1, t0); // side wall
-                    T(bc, b1, b0);                 // bottom cap
-                }
-            }
-
-            {
-                // Water bottle on the front workbench surface
-                float wbSurfY  = minY + carH * 0.430f;          // top of second workbench
-                float bottleX  = maxX + carW * 0.51f;           // mid-depth of bench
-                float bottleZ  = maxZ - carL * 0.13f + carL * 0.09f; // ~1/4 along bench from front
-                Vec3  bottleCol = new Vec3(0.72f, 0.88f, 0.98f); // clear light-blue plastic
-                AddCylinder(new Vec3(bottleX, wbSurfY, bottleZ),
-                    r: carW * 0.022f, h: carH * 0.21f, N: 20,
-                    col: bottleCol, amb: 0.03f, dif: 0.04f, spec: 1.0f, shin: 256f,
-                    refl: 0.08f, transp: 0.82f, ior: 1.49f);
-            }
-            // ─────────────────────────────────────────────────────────────────
 
             // ── Workbench prop ────────────────────────────────────────────────
             {
@@ -432,6 +398,11 @@ namespace raytracing.Controllers
             var bvh = BVHNode.Build(new List<ISceneObject>(triangles));
 
             var objects = new List<ISceneObject> { bvh };
+
+            // Puddle — front-left of car, organic irregular shape
+            objects.Add(new Puddle(
+                new Vec3(minX - carW * 0.30f, minY + 0.001f, maxZ + carL * 0.04f),
+                carW * 0.28f));
 
             // Dark studio floor
             objects.Add(new Plane(
