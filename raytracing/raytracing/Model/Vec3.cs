@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 
 namespace raytracing.Model
 {
-    public class Vec3 : IEquatable<Vec3>
+    public readonly struct Vec3 : IEquatable<Vec3>
     {
         public float X { get; }
         public float Y { get; }
@@ -11,18 +11,19 @@ namespace raytracing.Model
         public Vec3(float x, float y, float z) { X = x; Y = y; Z = z; }
 
         public static Vec3 Zero => new Vec3(0f, 0f, 0f);
-        public static Vec3 One => new Vec3(1f, 1f, 1f);
+        public static Vec3 One  => new Vec3(1f, 1f, 1f);
 
         public static Vec3 operator +(Vec3 a, Vec3 b) => new Vec3(a.X + b.X, a.Y + b.Y, a.Z + b.Z);
         public static Vec3 operator -(Vec3 a, Vec3 b) => new Vec3(a.X - b.X, a.Y - b.Y, a.Z - b.Z);
-        public static Vec3 operator -(Vec3 v) => new Vec3(-v.X, -v.Y, -v.Z);
+        public static Vec3 operator -(Vec3 v)         => new Vec3(-v.X, -v.Y, -v.Z);
 
         public static Vec3 operator *(Vec3 v, float s) => new Vec3(v.X * s, v.Y * s, v.Z * s);
         public static Vec3 operator *(float s, Vec3 v) => v * s;
         public static Vec3 operator /(Vec3 v, float s) => new Vec3(v.X / s, v.Y / s, v.Z / s);
+        public static Vec3 operator *(Vec3 a, Vec3 b)  => new Vec3(a.X * b.X, a.Y * b.Y, a.Z * b.Z);
 
-        // Component-wise multiply (useful for colors)
-        public static Vec3 operator *(Vec3 a, Vec3 b) => new Vec3(a.X * b.X, a.Y * b.Y, a.Z * b.Z);
+        public static bool operator ==(Vec3 a, Vec3 b) => a.X == b.X && a.Y == b.Y && a.Z == b.Z;
+        public static bool operator !=(Vec3 a, Vec3 b) => !(a == b);
 
         public float LengthSquared() => X * X + Y * Y + Z * Z;
         public float Length() => MathF.Sqrt(LengthSquared());
@@ -51,9 +52,9 @@ namespace raytracing.Model
                 MathF.Min(MathF.Max(v.Z, min), max)
             );
 
-        public bool Equals(Vec3 other) => X.Equals(other.X) && Y.Equals(other.Y) && Z.Equals(other.Z);
-        public override bool Equals(object? obj) => obj is Vec3 v && Equals(v);
-        public override int GetHashCode() => HashCode.Combine(X, Y, Z);
-        public override string ToString() => $"({X}, {Y}, {Z})";
+        public bool Equals(Vec3 other)           => this == other;
+        public override bool Equals(object? obj) => obj is Vec3 v && this == v;
+        public override int GetHashCode()        => HashCode.Combine(X, Y, Z);
+        public override string ToString()        => $"({X}, {Y}, {Z})";
     }
 }
